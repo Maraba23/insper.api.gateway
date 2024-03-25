@@ -1,6 +1,6 @@
 spring:
   application:
-    name: store-gateway
+    name: api-gateway
 
   cloud:
     discovery:
@@ -8,13 +8,13 @@ spring:
         enabled: true
     gateway:
       routes:
-        - id: store-auth
-          uri: lb://store-auth
+        - id: api-auth
+          uri: lb://api-auth
           predicates:
             - Path=/auth/**
 
-        - id: store-account
-          uri: lb://store-account
+        - id: api-account
+          uri: lb://api-account
           predicates:
             - Path=/accounts/**
 
