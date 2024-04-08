@@ -11,17 +11,12 @@ spring:
         - id: api-auth
           uri: lb://api-auth
           predicates:
-            - Path=/auth/**
+            - Path=/ingrediente/**
 
         - id: api-account
           uri: lb://api-account
           predicates:
-            - Path=/accounts/**
-
-        - id: insper
-          uri: https://www.insper.edu.br
-          predicates:
-            - Path=/
+            - Path=/api-receitas/**
 
 eureka:
   client:

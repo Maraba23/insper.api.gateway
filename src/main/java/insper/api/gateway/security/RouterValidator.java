@@ -1,4 +1,4 @@
-package insper.store.gateway.security;
+package insper.api.gateway.security;
 
 import java.util.List;
 import java.util.function.Predicate;

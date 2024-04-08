@@ -1,4 +1,4 @@
-package insper.store.gateway.security;
+package insper.api.gateway.security;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.gateway.filter.GatewayFilterChain;
@@ -46,7 +46,7 @@ public class AuthenticationFilter implements GlobalFilter {
             .defaultHeader(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE)
             .build()
             .post()
-            .uri("http://store-auth/auth/solve")
+            .uri("http://api-auth/auth/solve")
             .bodyValue(SolveIn.builder().token(token).build())
             .retrieve()
             .toEntity(SolveOut.class)
