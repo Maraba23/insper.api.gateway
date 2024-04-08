@@ -1,4 +1,4 @@
-package insper.store.gateway;
+package insper.api.gateway;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

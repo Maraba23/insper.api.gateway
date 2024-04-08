@@ -1,4 +1,4 @@
-package insper.store.gateway;
+package insper.api.gateway;
 
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.context.annotation.Bean;

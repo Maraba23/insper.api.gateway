@@ -1,6 +1,6 @@
 spring:
   application:
-    name: store-gateway
+    name: api-gateway
 
   cloud:
     discovery:
@@ -8,20 +8,15 @@ spring:
         enabled: true
     gateway:
       routes:
-        - id: store-auth
-          uri: lb://store-auth
+        - id: ingrediente
+          uri: lb://ingrediente
           predicates:
-            - Path=/auth/**
+            - Path=/ingrediente/**
 
-        - id: store-account
-          uri: lb://store-account
+        - id: api-receitas
+          uri: lb://api-receitas
           predicates:
-            - Path=/accounts/**
-
-        - id: insper
-          uri: https://www.insper.edu.br
-          predicates:
-            - Path=/
+            - Path=/api-receitas/**
 
 eureka:
   client:
