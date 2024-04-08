@@ -12,8 +12,8 @@ import org.springframework.web.reactive.function.client.WebClient;
 import org.springframework.web.server.ResponseStatusException;
 import org.springframework.web.server.ServerWebExchange;
 
-import insper.store.auth.SolveIn;
-import insper.store.auth.SolveOut;
+import insper.api.auth.SolveIn;
+import insper.api.auth.SolveOut;
 import reactor.core.publisher.Mono;
 
 @Component

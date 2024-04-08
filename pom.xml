@@ -18,7 +18,7 @@
 	</properties>
 	<dependencies>		
 		<dependency>
-			<groupId>insper.store</groupId>
+			<groupId>insper.api</groupId>
 			<artifactId>auth</artifactId>
 			<version>${project.version}</version>
 		</dependency>
