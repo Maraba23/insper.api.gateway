@@ -18,6 +18,11 @@ spring:
           predicates:
             - Path=/api-receitas/**
 
+        - id: api-auth
+          uri: lb//api-auth
+          predicates:
+            - Path=/api-auth/**
+
 eureka:
   client:
     register-with-eureka: true
