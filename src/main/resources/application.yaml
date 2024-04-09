@@ -18,6 +18,15 @@ spring:
           predicates:
             - Path=/accounts/**
 
+        - id: ingrediente
+          uri: lb://ingrediente
+          predicates:
+            - Path=/ingredientes/**
+
+        - id: api-receitas
+          uri: lb://api-receitas
+          predicates:
+            - Path=/receitas/**
 management:
   endpoints:
     web:
@@ -39,3 +48,8 @@ api:
       POST /auth/login,
       ANY /auth/actuator,
       ANY /accounts/actuator,
+      ANY /ingredientes,
+      ANY /ingredientes/{id},
+      ANY /receitas,
+      ANY /receitas/{id}
+
