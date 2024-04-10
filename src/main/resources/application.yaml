@@ -50,4 +50,6 @@ api:
       ANY /accounts/actuator,
       ANY /receitas/actuator,
       ANY /ingredientes/actuator,
+      ANY /ingredientes/**,
+      ANY /receitas/**
 
