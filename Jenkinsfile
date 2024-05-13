@@ -12,7 +12,7 @@ pipeline {
                 sh 'mvn clean package'
             }
         }   
-  
+        
         stage('Build Image') {
             steps {
                 script {
