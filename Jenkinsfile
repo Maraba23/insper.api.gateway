@@ -30,34 +30,12 @@ pipeline {
                 }
             }
         }
-        stage('Deploy on Local K8s') {
-            when { 
-                environment name: 'LOCAL', value: 'true'
-            }
+        stage('Deploy') {
             steps {
-                withCredentials([ string(credentialsId: 'minikube-credential', variable: 'api_token') ]) {
-                    sh "kubectl --token $api_token --server https://host.docker.internal:${env.K8S_LOCAL_PORT}  --insecure-skip-tls-verify=true apply -f ./k8s/deployment.yaml"
-                    sh "kubectl --token $api_token --server https://host.docker.internal:${env.K8S_LOCAL_PORT}  --insecure-skip-tls-verify=true apply -f ./k8s/service.yaml"
+                script {
+                    sh 'kubectl apply -f k8s/deployment.yaml'
                 }
             }
-        }
-        stage('Deploy on MicroK8s') {
-            when { 
-                environment name: 'MicroK8s', value: 'true'
-            }
-            steps {
-                sh "microk8s kubectl apply -f ./k8s/deployment.yaml"
-                sh "microk8s kubectl apply -f ./k8s/service.yaml"
-            }
-        }
-        stage('Deploy on AWS K8s') {
-            when { 
-                environment name: 'AWS', value: 'true'
-            }
-            steps {
-                sh "kubectl apply -f ./k8s/deployment.yaml"
-                sh "kubectl apply -f ./k8s/service.yaml"
-            }
-        }
+}
     }
 }
