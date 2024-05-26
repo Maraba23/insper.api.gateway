@@ -17,6 +17,6 @@ spec:
       containers:
         - name: gateway
           image: pasilva2023/gateway:latest
-          imagePullPolicy: Always
+          imagePullPolicy: Never
           ports:
             - containerPort: 8080
